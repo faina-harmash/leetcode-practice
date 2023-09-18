@@ -1,6 +1,6 @@
 package org.example;
 
-public class LeetCodeExercise1 {
+public class LeetCodeExercise1TwoSum {
     public int[] twoSum(int[] nums, int target) {
 
         int[] resultList = {};

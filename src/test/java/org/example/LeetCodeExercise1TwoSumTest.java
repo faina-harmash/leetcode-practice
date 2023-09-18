@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LeetCodeExercise1Test {
+class LeetCodeExercise1TwoSumTest {
 
-    LeetCodeExercise1 leetCodeExercise;
+    LeetCodeExercise1TwoSum leetCodeExercise;
 
     @BeforeEach
     void init() {
-        leetCodeExercise = new LeetCodeExercise1();
+        leetCodeExercise = new LeetCodeExercise1TwoSum();
     }
 
     @Test
