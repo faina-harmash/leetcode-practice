@@ -1,4 +1,4 @@
-package org.example;
+package org.example.exercise9;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ public class LeetCodeExercise9PalindromeTest {
 
     @BeforeEach
     void init() {
-        leetCodeExercise = new LeetCodeExercise9Palindrome();
+        leetCodeExercise = new LeetCodeExercise9PalindromeSolution1();
     }
 
     @Test
