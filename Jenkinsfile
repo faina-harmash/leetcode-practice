@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        jdk 'jdk17'
-    }
     parameters {
         choice(
                 choices:
