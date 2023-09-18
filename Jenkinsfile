@@ -4,6 +4,7 @@ pipeline {
         choice(
                 choices:
                         [
+                                'dev',
                                 'test',
                                 'acc',
                                 'prod'
@@ -28,7 +29,6 @@ pipeline {
 
     }
 
-
     stages {
         stage('Build') {
             steps {
@@ -51,6 +51,25 @@ pipeline {
             }
         }
 
+    }
+    post {
+        always {
+            echo "Notifying build result by email"
+        }
+        success {
+            mail to: 'faya.garmash.work@gmail.com',
+
+                    subject: "SUCCESS: ${currentBuild.fullDisplayName}",
+
+                    body: "Test Complete Build passed."
+        }
+        failure {
+            mail to: 'faya.garmash.work@gmail.com',
+
+                    subject:"FAILURE: ${currentBuild.fullDisplayName}",
+
+                    body: "Test Complete Build failed."
+        }
     }
 
 }
