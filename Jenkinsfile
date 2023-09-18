@@ -1,33 +1,33 @@
 pipeline {
     agent any
-    tools{
-    jdk 'jdk17'
+    tools {
+        jdk 'jdk17'
     }
-    parameters{
-    choice (
-    choices:
-    [
-    'test',
-    'acc',
-    'prod'
-    ],
-    description:
-    'Environment under testing.',
-    name:
-    'env'
-    )
-    choice(
-    choices:
-    [
-    'chrome',
-    'firefox',
-    'safari',
-    ],
-    description:
-    'Browser under testing',
-    name:
-    'browser'
-    )
+    parameters {
+        choice(
+                choices:
+                        [
+                                'test',
+                                'acc',
+                                'prod'
+                        ],
+                description:
+                        'Environment under testing.',
+                name:
+                        'env'
+        )
+        choice(
+                choices:
+                        [
+                                'chrome',
+                                'firefox',
+                                'safari',
+                        ],
+                description:
+                        'Browser under testing',
+                name:
+                        'browser'
+        )
 
     }
 
@@ -39,11 +39,11 @@ pipeline {
             }
         }
         stage('Test') {
-        when {
-        expression {
-        BRANCH_NAME == 'master' || BRANCH_NAME == 'dev'
-        }
-        }
+            when {
+                expression {
+                    BRANCH_NAME == 'master' || BRANCH_NAME == 'dev'
+                }
+            }
             steps {
                 echo 'Testing..'
             }
@@ -53,8 +53,6 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        post {}
-
 
     }
 
